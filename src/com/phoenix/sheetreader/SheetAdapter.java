@@ -43,7 +43,7 @@ public class SheetAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ViewHolder holder = null;
 		if (convertView == null) {
-			convertView = mInflater.inflate(R.layout.sheet_row, null);
+			convertView = mInflater.inflate(R.layout.sheet_row_alt, null);
 			holder = new ViewHolder();
 			holder.mTxtRowNo = (TextView) convertView
 					.findViewById(R.id.txtRowNo);
@@ -58,7 +58,7 @@ public class SheetAdapter extends BaseAdapter {
 		ArrayList<String> list = (ArrayList<String>) getItem(position);
 
 		holder.mTxtRowNo.setText((position + 1) + ".");
-		String content = "\n";
+		String content = "";
 		for (int i = 0; i < list.size(); i++) {
 			if (i == 0) {
 				holder.mTxtLabelNo.setText(list.get(i));
